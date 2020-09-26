@@ -1,4 +1,5 @@
 class User < ApplicationRecord
-  enum uf: CS.states(:br)
+  uf = CS.states(:br).map do |key, value| key end
+  enum uf: uf
   enum sex: [:male, :female, :other]
 end
